@@ -1,10 +1,12 @@
 const API_URL = 'https://retoolapi.dev/CHwKt2/data';
 
+let adatok = [];
+
 async function init() {
     const response = await (fetch(API_URL));
     console.log('Headerek letöltve');
 
-    const adatok = await response.json();
+    adatok = await response.json();
     const table = document.getElementById('tablazat');
     for (const auto of adatok) {
         const tr = document.createElement('tr');
